@@ -63,6 +63,10 @@ volcano_server <- function(id, gprofiler, dataset, label = NULL){
                     
                      ns <- session$ns
                      
+                     #If I include these lines and reference the inputs outside of the reactive context, I get the desired result.
+                     #data <- dataset
+                     #gp <- gprofiler
+                     
                      filtered_data <- reactive({
                                                 if(input$term_type != "all"){
                          
